@@ -1,14 +1,13 @@
 import React from 'react'
-import { StyleSheet, View, Text, Image } from 'react-native'
+import {View, Text, Image } from 'react-native'
 import AppStyles from '../../constants/Styles';
-import Colors from '../../constants/Colors';
 
 const  ProfilScreen = () => {
   
    
 
   return (
-    <View style={styles.container}>
+    <View style={AppStyles.container}>
         <Image style={AppStyles.imageProfil}  source={require('../../../assets/profil.png')}/>
         <View style={AppStyles.header}>
             <Text style={AppStyles.txtInfo}>Antigone Pakloglou</Text>
@@ -22,12 +21,4 @@ const  ProfilScreen = () => {
 
 }
 
-const styles = StyleSheet.create({
-  container: {
-      flex:1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: Colors.lavande
-  }
-})
 export default ProfilScreen

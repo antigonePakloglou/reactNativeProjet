@@ -29,18 +29,21 @@ useEffect(() => {
 
 const renderQuizzItem = ({item}) => {
     return(
-        <Pressable onPress={()=> navigation.navigate('QuizzScreen', {
-            quizz : item
-        })}>
+        <Pressable onPress={()=>{
+            navigation.navigate('QuizzScreen', {
+                quizz : item
+            })
+           
+        } }>
             <View style= {AppStyles.quizzBox}>
-                <Card>
+                <Card  keyExtractor={(item, index) => item.id}>
                     <Card.Title style={AppStyles.quizzTitre}>{item.title}</Card.Title>
                     <Card.Divider />
                     <Card.Image
                         style={AppStyles.quizzImg}
                         source={{uri: item.image}}
                     />
-                     <Text style={AppStyles.quizzQuestion}>x questions</Text>
+                     <Text style={AppStyles.quizzQuestion}>{item.questions.length} questions</Text>
                 </Card>
             </View>
         </Pressable>
@@ -53,11 +56,10 @@ if(loading){
 }
 
   return (
-    <View style={styles.container}>
+    <View style={AppStyles.container}>
       <View style={AppStyles.headerListe}>
             <Text style={AppStyles.titreQuizz}>Listes des quizzs</Text>
         </View>
-     {/*  <Button  title="go to post detail" onPress={()=> navigation.navigate("PostDetail")} /> */}
       <FlatList key={(item)=> item.id}
         data={quizzs}
         renderItem={renderQuizzItem}
@@ -69,13 +71,7 @@ if(loading){
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: Colors.lavande
-    },
-
+   
     quizzNombre : {
         color: '#FBF189'
     },

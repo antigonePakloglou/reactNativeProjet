@@ -2,6 +2,13 @@ import { StyleSheet } from "react-native";
 import Colors from "./Colors";
 
 export default StyleSheet.create({
+    /* All Pages */
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: Colors.lavande
+      },
     /* page Quizz */
     titreQuizz: {
         fontSize: 22,
@@ -11,6 +18,9 @@ export default StyleSheet.create({
         borderRadius: 40,
         marginBottom: 20,
     },
+    iconeFermeture : {
+        justifyContent:'flex-end'
+    },
     question: {
         fontWeight: 'bold',
         fontSize: 18,
@@ -19,16 +29,18 @@ export default StyleSheet.create({
     },
     reponses : {
         borderWidth: 1,
-        borderColor: Colors.lightPink,
+        borderColor: Colors.yellow,
         borderRadius: 50,
        borderRadius: 20,
        padding: 10,
        width: '90%',
        marginHorizontal: 10,
-       marginBottom: 10
+       marginBottom: 10,
+       flexDirection: 'row'
     },
     reponsesText : {
         fontSize: 16,
+        flex: 1
     },
     rowAligne :{
         flexDirection: 'row'
@@ -50,9 +62,9 @@ export default StyleSheet.create({
 
     /* btn custom */
     btn: {
-        height: 45,
-        width: '70%',
-        backgroundColor: Colors.greenBtn,
+        height: 60,
+        width: 60,
+        backgroundColor: Colors.orange,
         borderRadius: 30,
         justifyContent : 'center',
         alignItems : 'center',
@@ -89,16 +101,8 @@ export default StyleSheet.create({
        
       width: 180,
       height: 180,
-      marginBottom: 100
-
-    
-        
-    },
-    quizzTitre : {
-       
-    },
-    quizzQuestion : {
-       
+      marginBottom: 100,
+      
     },
     quizzImg : {
         height: 100,
