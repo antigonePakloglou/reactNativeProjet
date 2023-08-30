@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import Colors from "./Colors";
 
 export default StyleSheet.create({
-    /* page quizz */
+    /* page Quizz */
     titreQuizz: {
         fontSize: 22,
         backgroundColor: Colors.yellow,
@@ -18,7 +18,9 @@ export default StyleSheet.create({
         marginBottom: 40
     },
     reponses : {
-       backgroundColor: Colors.lightPink,
+        borderWidth: 1,
+        borderColor: Colors.lightPink,
+        borderRadius: 50,
        borderRadius: 20,
        padding: 10,
        width: '90%',
@@ -62,5 +64,47 @@ export default StyleSheet.create({
         fontSize: 15,
     },
 
+    /* page Profil */
+    txtInfo: {
+        marginBottom: 30,
+        fontWeight: 'bold',
+        fontSize: 13
+    },
+    imageProfil : {
+        width: 200,
+        height: 200
+    },
+
+    /* page Home */
+    headerListe: {
+        backgroundColor: Colors.yellow,
+        justifyContent: 'center',
+        alignItems: 'center',
+       
+        padding: 10,
+        marginBottom: 30,
+        marginTop: 40
+    },
+    quizzBox : {
+       
+      width: 180,
+      height: 180,
+      marginBottom: 100
+
+    
+        
+    },
+    quizzTitre : {
+       
+    },
+    quizzQuestion : {
+       
+    },
+    quizzImg : {
+        height: 100,
+        width: 150,
+        borderRadius: 40,
+        marginBottom: 30
+    }
     
 }); 

@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, Image, FlatList, ActivityIndicator, Pressable }
 import React, {useEffect, useState} from 'react'
 import Colors from '../../constants/Colors';
 import AppStyles from '../../constants/Styles';
+import { Card } from '@rneui/themed';
 
 const API= "http://estiamqcm.davilat.com/api/quizzes";
 
@@ -31,10 +32,16 @@ const renderQuizzItem = ({item}) => {
         <Pressable onPress={()=> navigation.navigate('QuizzScreen', {
             quizz : item
         })}>
-            <View style= {styles.quizz}>
-                <Image style={styles.image}  source={{uri: item.image}}/>
-                <Text style={styles.quizzTitle}>{item.title}</Text>
-                <Text style={AppStyles.h3}>x questions</Text>
+            <View style= {AppStyles.quizzBox}>
+                <Card>
+                    <Card.Title style={AppStyles.quizzTitre}>{item.title}</Card.Title>
+                    <Card.Divider />
+                    <Card.Image
+                        style={AppStyles.quizzImg}
+                        source={{uri: item.image}}
+                    />
+                     <Text style={AppStyles.quizzQuestion}>x questions</Text>
+                </Card>
             </View>
         </Pressable>
     )
@@ -47,7 +54,9 @@ if(loading){
 
   return (
     <View style={styles.container}>
-      <Text >HOME</Text>
+      <View style={AppStyles.headerListe}>
+            <Text style={AppStyles.titreQuizz}>Listes des quizzs</Text>
+        </View>
      {/*  <Button  title="go to post detail" onPress={()=> navigation.navigate("PostDetail")} /> */}
       <FlatList key={(item)=> item.id}
         data={quizzs}
@@ -64,31 +73,12 @@ const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-     
+      backgroundColor: Colors.lavande
     },
-    quizzTitle : {
-        fontSize: 18,
-        fontWeight: 'bold',
-        padding: 10
-    
-    },
-    quizz: {
-        backgroundColor : Colors.pink,
-        width: 150,
-        height: 200,
-        marginHorizontal: 20,
-        marginVertical: 20,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 40,
-        padding: 20
-    },
+
     quizzNombre : {
         color: '#FBF189'
     },
-    image: {
-        height: '50%',
-        width: '50%'
-    }
+   
   });
 export default HomeScreen

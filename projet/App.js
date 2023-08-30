@@ -7,6 +7,7 @@ import HomeScreen from './src/component/screens/HomeScreen';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import QuizzScreen from './src/component/screens/QuizzScreen';
+import Colors from './src/constants/Colors';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -18,13 +19,13 @@ const Tabs = () => {
         tabBarActiveTintColor: 'pink',
         tabBarInactiveTintColor: 'blue',
         headerShown: false,
-        tabBarIcon: (({focused}) => <FontAwesome5 name="home" size={24} color={focused ? 'pink' : 'blue'} />)
+        tabBarIcon: (({focused}) => <FontAwesome5 name="home" size={24} color={focused ? Colors.orange : Colors.lavande} />)
       }} />
       <Tab.Screen name="Profile" component={ProfilScreen}  options={{
         tabBarActiveTintColor: 'pink',
         tabBarInactiveTintColor: 'blue',
         headerShown: false,
-        tabBarIcon: (({focused}) => <AntDesign name="profile" size={24} color={focused ? 'pink' : 'blue'} />)
+        tabBarIcon: (({focused}) => <AntDesign name="profile" size={24} color={focused ? Colors.orange : Colors.lavande} />)
       }} />
     </Tab.Navigator>
   )
@@ -35,11 +36,11 @@ export default function App() {
   return (
     <NavigationContainer>
      {/* initialRouteName : route par defaut  */}
-    <Stack.Navigator initialRouteName='Login' >
-      <Stack.Screen name="Home" component={HomeScreen}
+    <Stack.Navigator initialRouteName='Profile' >
+
+    <Stack.Screen name="Tabs" component={Tabs} 
         options={{
-          title: 'Accueil',
-          headerShown: false,
+         headerShown: false
         }}
       />
       <Stack.Screen name="QuizzScreen" component={QuizzScreen} 
@@ -48,12 +49,9 @@ export default function App() {
           headerShown: false,
         }}
       />
-      <Stack.Screen name="Tabs" component={Tabs} 
-        options={{
-         headerShown: false
-        }}
-      />
-      <Stack.Screen name="Profile" component={ProfilScreen} />
+    
+  
+    
   
     </Stack.Navigator>
   </NavigationContainer>
