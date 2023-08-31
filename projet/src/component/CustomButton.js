@@ -7,7 +7,6 @@ const CustomButton = ({onPress}) => {
   return (
     <Pressable style={AppStyles.btn} onPress={onPress}>
       <Ionicons name="ios-close-circle" size={24} color="black" />
-      
     </Pressable>
   )
 }

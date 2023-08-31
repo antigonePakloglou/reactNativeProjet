@@ -56,8 +56,10 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 40,
-        padding: 30,
-        marginBottom: 30
+        paddingTop: 20,
+        paddingHorizontal: 20,
+        marginTop: 10,
+        marginBottom: 20
     },
 
     /* btn custom */
